@@ -19,7 +19,9 @@ object ApplicationBuild extends Build {
       "net.databinder" %% "dispatch-mime" % "0.8.7",
       "net.databinder" %% "dispatch-json" % "0.8.7",
       "com.typesafe" %% "play-plugins-util" % "2.0.1",
-      "org.mindrot" % "jbcrypt" % "0.3m"
+      "org.mindrot" % "jbcrypt" % "0.3m",
+      "org.webjars" % "bootstrap" % "2.1.1",
+      "org.webjars" % "jquery" % "1.8.2"
     )
     
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA)
@@ -28,6 +30,7 @@ object ApplicationBuild extends Build {
       resolvers ++= Seq(
         "jBCrypt Repository" at "http://repo1.maven.org/maven2/org/",
         "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
-      )
+      ),
+      resolvers += "webjars" at "http://webjars.github.com/m2"
     )
 }
