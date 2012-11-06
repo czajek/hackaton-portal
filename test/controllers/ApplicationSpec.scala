@@ -1,7 +1,5 @@
 package controllers
 
-package test
-
 import org.specs2.mutable._
 import play.api.test._
 import play.api.test.Helpers._
@@ -16,7 +14,7 @@ class ApplicationSpec extends Specification {
         val result = controllers.Application.index(FakeRequest())
 
         status(result) must equalTo(OK)
-        contentAsString(result) must contain(Messages("home.welcome"))
+        contentAsString(result) must contain(helpers.CmsMessages("home.welcome"))
       }
     }
 
@@ -25,7 +23,7 @@ class ApplicationSpec extends Specification {
         val result = controllers.Application.about(FakeRequest())
 
         status(result) must equalTo(OK)
-        contentAsString(result) must contain(Messages("about.title"))
+        contentAsString(result) must contain(helpers.CmsMessages("about.title"))
       }
     }
 
@@ -34,7 +32,7 @@ class ApplicationSpec extends Specification {
         val result = controllers.Application.contact(FakeRequest())
 
         status(result) must equalTo(OK)
-        contentAsString(result) must contain(Messages("contact.title"))
+        contentAsString(result) must contain(helpers.CmsMessages("contact.title"))
       }
     }
 

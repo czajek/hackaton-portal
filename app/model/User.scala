@@ -9,6 +9,7 @@ import org.squeryl.dsl.ast.ExpressionNode
 
 case class User(name: String,
   email: String,
+  language: String,
   @Column("github_username") githubUsername: String,
   @Column("twitter_account") twitterAccount: String,
   @Column("avatar_url") avatarUrl: String,
@@ -81,6 +82,7 @@ object User extends Schema {
         set (
           u.avatarUrl := userToBeUpdated.avatarUrl,
           u.email := userToBeUpdated.email,
+          u.language := userToBeUpdated.language,
           u.githubUsername := userToBeUpdated.githubUsername,
           u.isAdmin := userToBeUpdated.isAdmin,
           u.isBlocked := userToBeUpdated.isBlocked,
